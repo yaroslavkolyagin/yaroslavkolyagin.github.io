@@ -1,0 +1,591 @@
+html {
+  width: 100%;
+  min-width: 900px;
+  height: 100%;
+  min-height: 600px;
+}
+body {
+  width: 100%;
+  min-width: 900px;
+  height: 100%;
+  min-height: 600px;
+  font-family: 'Lato', sans-serif;
+  color:#000;
+}
+h1 {
+  font-size: 55px;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  line-height: 65px;
+  letter-spacing: 20px;
+}
+h2 {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 40%;
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+h3 {
+  font-size:20px;
+  text-transform: uppercase;
+  margin: 40px 0;
+  letter-spacing: 10px;
+}
+.wrap {
+  width: 900px;
+  margin: 0 auto;
+}
+section {
+  padding: 150px 0;
+}
+section p {
+  font-size: 16px;
+  line-height: 25px;
+}
+section:last-child{
+margin-bottom: 0;
+}
+.on_white {
+  border: 2px solid black;
+}
+.on_white p {
+  color: rgb(60,60,60);
+}
+.on_white h2 {
+  background-color: #fff;
+}
+.on_background {
+  border: 2px solid #fff;
+  border-top: none;
+}
+.on_background h2 {
+  color: white;
+}
+.on_background h2:before {
+    content: " ";
+    display: inline-block;
+    vertical-align: bottom;
+    border: 1px solid white;
+    width: 75%;
+    position: absolute;
+    left: -75%;
+    top: 20px;
+}
+.on_background h2:after {
+    content: " ";
+    display: inline-block;
+    vertical-align: bottom;
+    border: 1px solid white;
+    width: 75%;
+    position: absolute;
+    right: -75%;
+    top: 20px;
+}
+.on_background p {
+  color: #fff
+}
+.on_background h2 {
+  background-color: rgba(0,0,0,0);
+}
+
+/***************** Animate *****************/
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+/***************** FadeIn *****************/
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+/***************** Bounce *****************/
+@-webkit-keyframes bounce {
+  from, 20%, 53%, 80%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
+
+  40%, 43% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    -webkit-transform: translate3d(0, -30px, 0);
+    transform: translate3d(0, -30px, 0);
+  }
+
+  70% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    -webkit-transform: translate3d(0, -15px, 0);
+    transform: translate3d(0, -15px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0,-4px,0);
+    transform: translate3d(0,-4px,0);
+  }
+}
+
+@keyframes bounce {
+  from, 20%, 53%, 80%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
+
+  40%, 43% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    -webkit-transform: translate3d(0, -30px, 0);
+    transform: translate3d(0, -30px, 0);
+  }
+
+  70% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    -webkit-transform: translate3d(0, -15px, 0);
+    transform: translate3d(0, -15px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0,-4px,0);
+    transform: translate3d(0,-4px,0);
+  }
+}
+
+.bounce {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+
+/***************** Header ***************/
+header {
+  position: relative;
+  height: 100%;
+  background-image: url(../img/design/bg_header.jpg);
+  background-position: top right;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color:#fff;
+}
+header .wrap {
+  position: absolute;
+  height: 440px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.header_content {
+  text-align: center;
+}
+.logo {
+  margin-bottom: 100px;
+}
+.header_content p {
+  font-size: 15px;
+  text-transform: uppercase;
+  line-height: 30px;
+  letter-spacing: 1px;
+}
+.arrow_down_wrap {
+  overflow: hidden;
+  display: block;
+  border: 2px solid white;
+  height: 25px;
+  width: 20px;
+  border-radius: 40px;
+  position: absolute;
+  right: 0;
+  bottom: 30px;
+  left: 0;
+  margin: auto;
+  padding: 30px 0 0 0;
+}
+.arrow_down_wrap  img {
+  width: 20px;
+  height: 20px;
+  animation-duration: 3s;
+}
+
+/***************** About us ***************/
+.about_us_content {
+  box-sizing: border-box;
+  padding: 50px 170px;
+  text-align: center;
+  position: relative;
+}
+.about_us_content p {
+  margin-bottom: 35px;
+}
+.about_us_content p:last-child  {
+  margin-bottom: 0;
+}
+
+/***************** Services ***************/
+.services {
+  background-image: url(../img/design/bg_services.jpg);
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.services_content {
+  box-sizing: border-box;
+  padding: 50px 170px;
+  text-align: center;
+  position: relative;
+}
+
+/***************** What we do ***************/
+.what_we_do_content {
+  box-sizing: border-box;
+  padding: 50px 170px;
+  text-align: center;
+  position: relative;
+}
+.what_we_do_block {
+  margin: 75px 0;
+}
+
+/****************** Work *********************/
+.works {
+  padding: 0;
+}
+.works .owl-carousel:nth-child(1) {
+  margin-bottom: 10px;
+}
+.work_block {
+  position: relative;
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  padding: 160px 0 40px 40px;
+  transition: 3s;
+}
+.work_block_1 {background-image: url(../img/works_1.jpg) }
+.work_block_2 {background-image: url(../img/works_2.jpg) }
+.work_block_3 {background-image: url(../img/works_3.jpg) }
+.work_block_4 {background-image: url(../img/works_4.jpg) }
+.work_block_5 {background-image: url(../img/works_5.jpg) }
+.work_block_6 {background-image: url(../img/works_6.jpg) }
+
+.work_block:hover .hidden_bg {
+  display: block;
+  transition: 3s;
+}
+/***************** Contact us ***************/
+.contacts_content {
+  box-sizing: border-box;
+  padding: 50px 170px;
+  text-align: center;
+  position: relative;
+}
+.contacts {
+  padding-bottom: 0;
+}
+
+/****************** Btn *********************/
+/* Common button styles */
+.button {
+  display: block;
+  margin: 45px auto 0;
+  padding: 1em 6em;
+  border: none;
+  background: none;
+  color: white;
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+.button:hover {
+    cursor: pointer;
+}
+.button:focus {
+  outline: none;
+}
+.button > span {
+  vertical-align: middle;
+}
+/* Tamaya */
+.button--tamaya {
+  overflow: hidden;
+  color: #3c3c3c;
+  min-width: 180px;
+}
+.button--tamaya.button--inverted {
+  color: #3c3c3c;
+  border-color: #37474f;
+}
+.button--tamaya::before,
+.button--tamaya::after {
+  content: attr(data-text);
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  left: 0;
+  background: #3c3c3c;
+  color: #fff;
+  overflow: hidden;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+.button--tamaya.button--inverted::before,
+.button--tamaya.button--inverted::after {
+  background: #fff;
+  color: #37474f;
+}
+.button--tamaya::before {
+  top: 0;
+  padding-top: 1em;
+}
+.button--tamaya::after {
+  bottom: 0;
+  line-height: 0;
+}
+.button--tamaya > span {
+  display: block;
+  -webkit-transform: scale3d(0.2, 0.2, 1);
+  transform: scale3d(0.2, 0.2, 1);
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+.button--tamaya:hover::before {
+  -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+}
+.button--tamaya:hover::after {
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+}
+.button--tamaya:hover > span {
+  opacity: 1;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+}
+
+/****************** Footer *********************/
+footer {
+  padding: 60px 0;
+}
+.footer_content {
+  text-align: center;
+}
+.footer_content img {
+  display: inline-block;
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  margin-right: 35px;
+}
+.footer_content p {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  color:#3c3c3c;
+}
+
+
+
+.grid {
+  overflow: hidden;
+}
+/* Common style */
+.grid figure {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 0%;
+  /*min-width: 320px;
+  max-width: 480px;
+  max-height: 360px;*/
+  width: 100%;
+  background: #3085a3;
+  text-align: center;
+    cursor: -moz-grab;
+  cursor: -webkit-grab;
+  height: 230px;
+}
+
+.grid figure img {
+  position: relative;
+  display: block;
+  min-height: 100%;
+  max-width: 100%;
+  opacity: 0.8;
+}
+
+.grid figure figcaption {
+  padding: 2em;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.25em;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+  pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure figcaption > a {
+  position: absolute;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.grid figure figcaption > a {
+  z-index: 1000;
+  text-indent: 200%;
+  white-space: nowrap;
+  font-size: 0;
+  opacity: 0;
+}
+
+.grid figure h6 {
+  word-spacing: -0.15em;
+  font-weight: 300;
+}
+
+.grid figure h6 span {
+  font-weight: 800;
+}
+
+.grid figure h6,
+.grid figure p {
+  margin: 0;
+}
+
+.grid figure p {
+  letter-spacing: 1px;
+  font-size: 68.5%;
+}
+
+/* Individual effects */
+
+/*---------------*/
+/***** Lily *****/
+/*---------------*/
+
+figure.effect-lily img {
+  max-width: none;
+  width: -webkit-calc(100% + 50px);
+  width: calc(100% + 50px);
+  opacity: 0.7;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(-40px,0, 0);
+  transform: translate3d(-40px,0,0);
+}
+
+figure.effect-lily figcaption {
+  text-align: left;
+}
+
+figure.effect-lily figcaption > div {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 2em;
+  width: 100%;
+  height: 50%;
+}
+
+figure.effect-lily h6,
+figure.effect-lily p {
+  -webkit-transform: translate3d(0,40px,0);
+  transform: translate3d(0,40px,0);
+}
+
+figure.effect-lily h6 {
+    font-size: 35px;
+  color:#fff;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  -webkit-transition: -webkit-transform 0.35s;
+  transition: transform 0.35s;
+}
+
+figure.effect-lily p {
+  color: rgba(255,255,255,0.8);
+  opacity: 0;
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.35s;
+  transition: opacity 0.2s, transform 0.35s;
+}
+
+figure.effect-lily:hover img,
+figure.effect-lily:hover p {
+  opacity: 1;
+}
+
+figure.effect-lily:hover img,
+figure.effect-lily:hover h6,
+figure.effect-lily:hover p {
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+figure.effect-lily:hover p {
+  -webkit-transition-delay: 0.05s;
+  transition-delay: 0.05s;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+}

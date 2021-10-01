@@ -1,64 +1,201 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-	<meta charset="UTF-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Yaroslav Kolyagin - Portfolio</title>
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
-	<link rel="stylesheet" href="styles.css">
-	<style>
-
-	</style>
-</head>
-
-<body>
-	<div class="global-wrap">
-
-		<header>
-			<img class="logo" src="img/palm.png" alt="">
-			<p class="title-description">Hello people, My name is</p>
-			<h1>Yaroslav Kolyagin</h1>
-			<p class="title-description">Html Coder from Saint Petersburg</p>
-		</header>
-
-		<main>
-			<section>
-				<div class="container">
-					<h2>Portfolio</h2>
-					<ul>
-						<li><a href="http://4u-spb.ru/" target="_blank"><img class="preview" src="img/preview/4you.jpg" alt=""></a></li>
-						<li><a href="http://ukcds.m18.ru/" target="_blank"><img class="preview" src="img/preview/ukcds.jpg" alt=""></a></li>
-						<li><a href="http://triocomedy.ru/" target="_blank"><img class="preview" src="img/preview/trio.jpg" alt=""></a></li>
-
-						<li><a href="works/prechu/index.html" target="_blank"><img class="preview" src="img/preview/prechu.jpg" alt=""></a></li>
-
-						<li><a href="works/design_lab/index.html" target="_blank"><img class="preview" src="img/preview/designlab.jpg" alt=""></a></li>
-						<li><a href="works/elena/index.html" target="_blank"><img class="preview" src="img/preview/elena.jpg" alt=""></a></li>
-						<li><a href="works/deliver/index.html" target="_blank"><img class="preview" src="img/preview/deliver.jpg" alt=""></a></li>
-
-						<li><a href="works/2in1/index.html" target="_blank"><img class="preview" src="img/preview/2in1.jpg" alt=""></a></li>
-						<li><a href="works/testdrive/index.html" target="_blank"><img class="preview" src="img/preview/testdrive.jpg" alt=""></a></li>
-						<li><a href="works/wholesale/index.html" target="_blank"><img class="preview" src="img/preview/wholesale.jpg" alt=""></a></li>
-
-						<li><a href="http://flurnn.ru/" target="_blank"><img class="preview" src="img/preview/flurnn.jpg" alt=""></a></li>
-						<li><a href="http://rentgen-centr.ru" target="_blank"><img class="preview" src="img/preview/rentgen.jpg" alt=""></a></li>
-						<li><a href="works/veeam_test/index.html" target="_blank"><img class="preview" src="img/preview/veam.jpg" alt=""></a></li>
-
-						<li><a href="works/checkout/index.html" target="_blank"><img class="preview" src="img/preview/checkout.jpg" alt=""></a></li>
-
-
-					</ul>
-				</div>
-			</section>
-		</main>
-
-		<footer>
-			<p>2019</p>
-		</footer>
-
-	</div>
-</body>
-
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>test-fundraiseup</title>
+    <link rel="stylesheet" href="css/bundle.min.css">
+  </head>
+  <body>
+    <div class="template">
+      <div class="template__header">
+        <div class="pannel">
+          <div class="pannel__top">
+            <h1 class="title-1">Donations</h1>
+          </div>
+          <div class="pannel__bottom">
+            <div class="pannel__search">
+              <form class="form-search">
+                <input class="form-search__input" type="text" placeholder="Search">
+                <button class="form-search__button" type="submit">
+                  <svg>
+                    <use href="img/sprite.svg#i-search"></use>
+                  </svg>
+                </button>
+              </form><a class="link-arrow" href="#"><span class="link-arrow__text">All statuses</span>
+                <svg class="link-arrow__i">
+                  <use href="img/sprite.svg#i-arrow"></use>
+                </svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="template__container">
+        <div class="template__main">
+          <div class="pannel">
+            <div class="pannel__top">
+              <div class="pannel__info">
+                <div class="course">
+                  <div class="course__title">
+                    <svg class="link-arrow__i">
+                      <use href="img/sprite.svg#i-dollar"></use>
+                    </svg><span>Donation</span>
+                  </div>
+                  <div class="course__numerals">
+                    <div class="course__numerals-main">€20.60 EUR</div>
+                    <div class="course__numerals-symbol">≈</div>
+                    <div class="course__numerals-sub">$22.22 USD</div>
+                  </div>
+                </div>
+                <div class="id">
+                  <div class="id__title">ID</div><a class="id__link" href="#"><span>DYHY694Y</span>
+                    <svg class="link-arrow__i">
+                      <use href="img/sprite.svg#i-link"></use>
+                    </svg></a>
+                </div>
+              </div>
+            </div>
+            <div class="pannel__bottom">
+              <div class="pannel__user">
+                <div class="user-info">
+                  <div class="user-info__item">
+                    <div class="user-info__propertie">Status</div>
+                    <div class="user-info__value user-info__value--status">Success</div>
+                  </div>
+                  <div class="user-info__item">
+                    <div class="user-info__propertie">Supporter</div>
+                    <div class="user-info__value">Charlotte Ann</div>
+                  </div>
+                  <div class="user-info__item">
+                    <div class="user-info__propertie">Campaign</div>
+                    <div class="user-info__value">Workout for water</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="info">
+            <div class="info__tabs" data-tabs="">
+              <div class="info__tabs-controls-wrap">
+                <div class="info__tabs-controls" data-tabs-controls="">
+                  <button class="info__tabs-controls-item">Behavior</button>
+                  <button class="info__tabs-controls-item">Appearance</button>
+                  <button class="info__tabs-controls-item">Custom Fields</button>
+                  <button class="info__tabs-controls-item">Questions</button>
+                  <button class="info__tabs-controls-item">URL Control</button>
+                </div>
+              </div>
+              <div class="info__tabs-content" data-tabs-contents="">
+                <div class="info__tabs-content-item">
+                  <form class="form-main">
+                    <div class="form-main__body">
+                      <div class="form-main__item form-main__item--select">
+                        <div class="form-main__item-name">Designation</div>
+                        <div class="form-main__item-field">
+                          <select class="select" name="">
+                            <option>Match Checkout Setting</option>
+                            <option>option 1</option>
+                            <option>option 2</option>
+                            <option>option 3</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-main__item form-main__item--goal">
+                        <div class="form-main__item-name">Goal</div>
+                        <div class="form-main__item-field"></div>
+                        <input class="input-text" type="text" placeholder="$10.00">
+                        <select class="select" name="">
+                          <option>USD</option>
+                          <option>EUR</option>
+                          <option>RUB</option>
+                          <option>TNG</option>
+                        </select>
+                      </div>
+                      <div class="form-main__item form-main__item--buttons">
+                        <div class="form-main__item-name">Default Amount</div>
+                        <div>
+                          <div class="radio">
+                            <input id="x1" type="radio" name="x" checked="">
+                            <label for="x1">Match Checkout Setting</label>
+                          </div>
+                          <div class="radio">
+                            <input id="x2" type="radio" name="x">
+                            <label for="x2">Customize</label>
+                          </div>
+                          <div class="checkbox">
+                            <input id="y1" type="checkbox">
+                            <label for="y1">Allow donor to change default currency</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-main__item form-main__item--range">
+                        <div class="form-main__item-name">Border size</div>
+                        <div class="form-main__item-field">
+                          <div class="range-slider">
+                            <input type="range" min="0" max="100" oninput="showVal1(this.value)" onchange="showVal1(this.value)" step="1" value="0">
+                            <div id="range1">0</div><span>px</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-main__item form-main__item--range">
+                        <div class="form-main__item-name">Border radius</div>
+                        <div class="form-main__item-field">
+                          <div class="range-slider">
+                            <input type="range" min="0" max="100" oninput="showVal2(this.value)" onchange="showVal2(this.value)" step="1" value="0">
+                            <div id="range2">0</div><span>px</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-main__footer">
+                      <button class="btn btn--accent">Save changes</button>
+                      <button class="btn">Cancel</button>
+                    </div>
+                  </form>
+                </div>
+                <div class="info__tabs-content-item">
+                  <div class="demo-wrapper">Контент второй вкладки</div>
+                </div>
+                <div class="info__tabs-content-item">
+                  <div class="demo-wrapper">Контент третьей вкладки</div>
+                </div>
+                <div class="info__tabs-content-item">
+                  <div class="demo-wrapper">Контент четвертой вкладки</div>
+                </div>
+                <div class="info__tabs-content-item">
+                  <div class="demo-wrapper">Контент пятой вкладки</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="template__aside">
+          <div class="template__aside-sticky">
+            <nav class="sideNav">
+              <ul class="sideNav__list">
+                <li class="sideNav__listItem"><a class="sideNav__listLink" href="#">
+                    <svg>
+                      <use href="img/sprite.svg#i-sideNav-1"></use>
+                    </svg><span>Change Amount</span></a></li>
+                <li class="sideNav__listItem"><a class="sideNav__listLink" href="#">
+                    <svg>
+                      <use href="img/sprite.svg#i-sideNav-2"></use>
+                    </svg><span>Change Payment Method</span></a></li>
+                <li class="sideNav__listItem"><a class="sideNav__listLink" href="#">
+                    <svg>
+                      <use href="img/sprite.svg#i-sideNav-3"></use>
+                    </svg><span>Change Date</span></a></li>
+                <li class="sideNav__listItem"><a class="sideNav__listLink" href="#">
+                    <svg>
+                      <use href="img/sprite.svg#i-sideNav-4"></use>
+                    </svg><span>Cancel Recurring</span></a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="template__footer"></div>
+    </div>
+    <script src="js/bundle.min.js"></script>
+  </body>
 </html>

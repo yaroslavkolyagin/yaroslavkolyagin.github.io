@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Checkout #C</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/datepicker.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<!-- LOADER -->
+<div class="loader_wrap">
+  <div class="loader_block">
+    <div class="loader"></div>
+    <p>Загружаем</p>
+  </div>
+</div>
+<!-- END LOADER -->
+
+<!-- CHECKOUT -->
+<div class="checkout">
+  <div class="checkout_container">
+
+    <!-- NOT LOGIN -->
+    <div class="not_login_block">
+      <div class="not_login_inner_wrap">
+        <div>
+          <div class="i_not_login"></div>
+          <p><b>Если вы уже зарегистрированы в Babadu,</b><br>вам не придется вводить данные о себе </p>
+        </div>
+        <div>
+          <button class="btn btn-mini">Войти</button>
+          <a href="#" class="not_login_block_close">&#10005;</a>
+        </div>
+      </div>
+    </div>
+    <!-- END NOT LOGIN -->
+
+    <form class="order_form" id="order_form" method="get">
+
+      <!-- CHECKOUT BLOCK OVERVIEW -->
+      <div class="checkout_block checkout_block__overview">
+        <h2>Общие сведения</h2>
+        <div class="overview_inner_container">
+
+          <div class="input_block">
+            <label for="name" class="input_label" >Фамилия, имя, отчество</label>
+            <input id="name" class="checkout_input" name="name" minlength="2" type="text" placeholder="Фамилия, имя, отчество" required >
+          </div>
+
+          <div class="input_block">
+            <label for="phone" class="input_label">Телефон</label>
+            <input id="phone" class="checkout_input phone_mask" name="phone" placeholder="+7()" required/>
+          </div>
+
+          <div class="input_block">
+            <label for="email" class="input_label">Электронная почта</label>
+            <input id="email" class="checkout_input" type="email" name="email" placeholder="Электронная почта" required/>
+          </div>
+
+          <p class="choice_city"><span class="choice_city_tit">Город</span> <span>Санкт-Петербырг</span><a href="#">Изменить</a></p>
+
+        </div>
+      </div>
+      <!-- END CHECKOUT BLOCK OVERVIEW -->
+
+      <!-- CHECKOUT BLOCK DELIVERY METHOD -->
+      <div class="checkout_block checkout_block__delivery_method">
+        <h2>Способ доставки</h2>
+        <div class="radio_wrap delivery_method">
+          <div class="radio_top_line clearfix">
+            <input class="radio" id="x1" type="radio" name="delivery_method" value="courier" required title="Пожалуйста выберите тип доставки">
+            <label class="radio_text" for="x1"><span>Курьерская доставка на дом</span></label>
+            <div class="price free-price">Бесплатно</div>
+          </div>
+          <div class="radio_subtext">
+            <p><span class="radio_properties">Передача в доставку:</span> <span class="radio_value"><b>завтра</b></span></p>
+            <p><span class="radio_properties">Передача в доставку:</span> <span class="radio_value"><b>24.08.2016 (среда)</b></span></p>
+          </div>
+        </div>
+        <div class="radio_wrap delivery_method">
+          <div class="radio_top_line clearfix">
+            <input class="radio" id="x2" type="radio" name="delivery_method" value="outpost" required title="Пожалуйста выберите тип доставки">
+            <label class="radio_text" for="x2"><span>Самовывоз из пункта выдачи</span></label>
+            <div class="price">200р</div>
+          </div>
+          <div class="radio_subtext">
+            <p><span class="radio_properties">Передача в доставку:</span> <span class="radio_value"><b>завтра</b></span></p>
+            <p><span class="radio_properties">Передача в доставку:</span> <span class="radio_value"><b>24.08.2016 (среда) — 25.08.2016 (четверг)</b></span></p>
+          </div>
+        </div>
+        <div class="radio_wrap delivery_method">
+          <div class="radio_top_line clearfix">
+            <input class="radio" id="x3" type="radio" name="delivery_method" value="post" required title="Пожалуйста выберите тип доставки">
+            <label class="radio_text" for="x3"><span>Почтой России</span></label>
+            <div class="price">200р</div>
+          </div>
+          <div class="radio_subtext">
+            <p><span class="radio_properties">Передача в доставку:</span> <span class="radio_value"><b>завтра</b></span></p>
+          </div>
+        </div>
+        <div class="radio_wrap delivery_method">
+          <div class="radio_top_line clearfix">
+            <input class="radio" id="x4" type="radio" name="delivery_method" value="transport" required title="Пожалуйста выберите тип доставки">
+            <label class="radio_text" for="x4"><span>Транспортной компанией</span></label>
+            <div class="price">200р</div>
+          </div>
+          <div class="radio_subtext">
+            <p>Стоимость доставки не входит в сумму заказа. Точная стоимость будет известна при получении товара и оплачивается отдельно от оплаты заказа.</p>
+          </div>
+        </div>
+        <label for="delivery_method" class="error radio_error"></label>
+      </div>
+      <!-- END CHECKOUT BLOCK DELIVERY METHOD -->
+
+      <!-- HIDDEN DELIVERY BLOCKS-->
+
+      <!-- COURIER TYPE-->
+      <div class="checkout_block checkout_block__delivery_type" name="delivery_type">
+        <h2>Варианты доставки</h2>
+        <div class="dilevery_type__top_block">
+          <div class="radio_wrap delivery_method">
+            <div class="radio_top_line clearfix">
+              <input class="radio" id="x5" type="radio" name="courier_type" value="DPD" required title="Пожалуйста выберите тип курьерской доставки">
+              <label class="radio_text" for="x5"><span>Курьер DPD</span></label>
+              <div class="price free-price">Бесплатно</div>
+            </div>
+            <div class="radio_subtext">
+              <p><span class="radio_properties">Передача в доставку:</span> <span class="radio_value"><b>завтра</b></span></p>
+              <p><span class="radio_properties">Передача в доставку:</span> <span class="radio_value"><b>24.08.2016 (среда)</b></span></p>
+            </div>
+          </div>
+          <label for="courier_type" class="error radio_error radio_error_courier_type"></label>
+        </div>
+        <div class="delivery_type__iputs_group">
+          <p class="choice_city choice_city_delivery_item"><span class="choice_city_tit">Город</span><span>Санкт-Петербург</span></p>
+          <div class="input_block">
+            <label for="x1_street" class="input_label" >Улица</label>
+            <input id="x1_street" class="checkout_input" name="x1_street" minlength="5" type="text" placeholder="Улица" required >
+          </div>
+          <div class="input_block">
+            <label for="x1_house" class="input_label" >Дом, корпус, квартира</label>
+            <input id="x1_house" class="checkout_input" name="x1_house" minlength="5" type="text" placeholder="Дом, корпус, квартира" required >
+          </div>
+        </div>
+      </div>
+      <!-- END COURIER TYPE-->
+
+      <!-- PICKUP TYPE-->
+      <div class="checkout_block checkout_block__delivery_type" name="delivery_type">
+        <h2>Адрес доставки</h2>
+
+        <div class="filters">
+          <div class="filters-parent">
+
+            <div class="filter-item-wrap">
+              <button type="button" class="drop_toogler">Станция метро<span class="filter_arrow"></span></button>
+              <div class="filters_drop">
+                <ul>
+                  <li>
+                    <input id="y1" type="checkbox" name="first"  hidden />
+                    <label for="y1">Ст.м. Невский проспек</label>
+                  </li>
+                  <li>
+                    <input id="y2" type="checkbox" name="second" hidden />
+                    <label for="y2">Ст.м. Гостинный двор</label>
+                  </li>
+                  <li>
+                    <input id="y3" type="checkbox" name="second" hidden />
+                    <label for="y3">Ст.м. Гостинный двор</label>
+                  </li>
+                  <li>
+                    <input id="y4" type="checkbox" name="second" hidden />
+                    <label for="y4">Ст.м. Гостинный двор</label>
+                  </li>
+                  <li>
+                    <input id="y5" type="checkbox" name="second" hidden />
+                    <label for="y5">Ст.м. Гостинный двор</label>
+                  </li>
+                  <li>
+                    <input id="y6" type="checkbox" name="second" hidden />
+                    <label for="y6">Ст.м. Гостинный двор</label>
+                  </li>
+                  <li>
+                    <input id="y7" type="checkbox" name="second" hidden />
+                    <label for="y7">Ст.м. Гостинный двор</label>
+                  </li>
+                  <li>
+                    <input id="y8" type="checkbox" name="second" hidden />
+                    <label for="y8">Ст.м. Гостинный двор</label>
+                  </li>
+                  <li>
+                    <input id="y9" type="checkbox" name="second" hidden />
+                    <label for="y9">Ст.м. Гостинный двор</label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="filter-item-wrap">
+              <button type="button" class="drop_toogler">Особенности<span class="filter_arrow"></span></button>
+              <div class="filters_drop">
+                <ul>
+                  <li>
+                    <input id="y10" type="checkbox" name="first"  hidden />
+                    <label for="y10">Особоенность 1</label>
+                  </li>
+                  <li>
+                    <input id="y11" type="checkbox" name="second" hidden />
+                    <label for="y11">Особоенность 2</label>
+                  </li>
+                  <li>
+                    <input id="y12" type="checkbox" name="second" hidden />
+                    <label for="y12">Особоенность 3</label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6304561409431!2d30.346518316284886!3d59.93827398187606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469631a0f25a6055%3A0x3e3c5cd125b8fb0f!2z0JjQktCt0KHQrdCf!5e0!3m2!1sru!2sru!4v1474555364833" allowfullscreen></iframe>
+          <div class="outpost_list">
+            <div class="outpost_item">
+              <p class="outpost_address purplee_line">м. Комендантский просп., ул. Ильюшина, д.5 кор.2, лит.А</p>
+              <div class="outpost_info">
+                <div><span>Пункт выдачи</span> <span>IML</span></div>
+                <div><span>Режим работы:</span> <span>пн.-сб.: с 10 до 20 часов, вск., праздники - выходной</span></div>
+              </div>
+              <div class="outpost_item__bottom_line">
+                <p><b>Бесплатно</b></p>
+                <button type="button" class="btn btn-mini btn-supersmall btn-inversion">Выбрать</button>
+              </div>
+            </div>
+            <div class="outpost_item">
+              <p class="outpost_address blue_line">м. Гостинный двор, ул. Садовая, д.20 кор.2, лит.А</p>
+              <div class="outpost_info">
+                <div><span>Пункт выдачи</span> <span>IML</span></div>
+                <div><span>Режим работы:</span> <span>пн.-сб.: с 10 до 20 часов, вск., праздники - выходной</span></div>
+              </div>
+              <div class="outpost_item__bottom_line">
+                <p><b>250 ₽</b></p>
+                <button type="button" class="btn btn-mini btn-supersmall btn-inversion">Выбрать</button>
+              </div>
+            </div>
+            <div class="outpost_item">
+              <p class="outpost_address purplee_line">м. Комендантский просп., ул. Ильюшина, д.5 кор.2, лит.А</p>
+              <div class="outpost_info">
+                <div><span>Пункт выдачи</span> <span>IML</span></div>
+                <div><span>Режим работы:</span> <span>пн.-сб.: с 10 до 20 часов, вск., праздники - выходной</span></div>
+              </div>
+              <div class="outpost_item__bottom_line">
+                <p><b>Бесплатно</b></p>
+                <button type="button" class="btn btn-mini btn-supersmall btn-inversion">Выбрать</button>
+              </div>
+            </div>
+            <div class="outpost_item">
+              <p class="outpost_address purplee_line">м. Комендантский просп., ул. Ильюшина, д.5 кор.2, лит.А</p>
+              <div class="outpost_info">
+                <div><span>Пункт выдачи</span> <span>IML</span></div>
+                <div><span>Режим работы:</span> <span>пн.-сб.: с 10 до 20 часов, вск., праздники - выходной</span></div>
+              </div>
+              <div class="outpost_item__bottom_line">
+                <p><b>Бесплатно</b></p>
+                <button type="button" class="btn btn-mini btn-supersmall btn-inversion">Выбрать</button>
+              </div>
+            </div>
+            <div class="outpost_item">
+              <p class="outpost_address purplee_line">м. Комендантский просп., ул. Ильюшина, д.5 кор.2, лит.А</p>
+              <div class="outpost_info">
+                <div><span>Пункт выдачи</span> <span>IML</span></div>
+                <div><span>Режим работы:</span> <span>пн.-сб.: с 10 до 20 часов, вск., праздники - выходной</span></div>
+              </div>
+              <div class="outpost_item__bottom_line">
+                <p><b>Бесплатно</b></p>
+                <button type="button" class="btn btn-mini btn-supersmall btn-inversion">Выбрать</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="choices_outpost clearfix">
+          <h4>Выбранный пункт</h4>
+          <div class="price free-price">Бесплатно</div>
+          <p class="outpost_address purplee_line">м. Комендантский просп., ул. Ильюшина, д.5 кор.2, лит.А</p>
+          <div class="outpost_info">
+            <div><span>Пункт выдачи</span> <span>IML</span></div>
+            <div><span>Режим работы:</span> <span>пн.-сб.: с 10 до 20 часов, вск., праздники - выходной</span></div>
+          </div>
+        </div>
+      </div>
+      <!-- END PICKUP TUPE-->
+
+      <!-- POST TYPE -->
+      <div class="checkout_block checkout_block__delivery_type" name="delivery_type">
+        <h2>Ваш адрес</h2>
+        <div class="delivery_type__iputs_group">
+          <p class="choice_city choice_city_delivery_item"><span class="choice_city_tit">Город</span><span>Санкт-Петербург</span></p>
+          <div class="input_block">
+            <label for="x3_street" class="input_label" >Улица</label>
+            <input id="x3_street" class="checkout_input" name="x3_street" minlength="5" type="text" placeholder="Улица" required >
+          </div>
+          <div class="input_block">
+            <label for="x3_house" class="input_label" >Дом, корпус, квартира</label>
+            <input id="x3_house" class="checkout_input" name="x3_house" minlength="5" type="text" placeholder="Дом, корпус, квартира" required >
+          </div>
+          <div class="input_block">
+            <label for="x3_index" class="input_label" >Почтовый индекс</label>
+            <input id="x3_index" class="checkout_input" name="x3_index" minlength="5" placeholder="000000" required >
+          </div>
+        </div>
+      </div>
+      <!-- END POST TYPE-->
+
+      <!-- TRANSPORT COMPANY TYPE-->
+      <div class="checkout_block checkout_block__delivery_type" name="delivery_type" >
+        <h2>Транспортные компании</h2>
+        <div class="dilevery_type__top_block">
+          <div class="radio_wrap delivery_method">
+            <div class="radio_top_line clearfix">
+              <input class="radio" id="x6" type="radio" name="transport_type" value="delovie_line" required title="Пожалуйста вберите транспортную компанию">
+              <label class="radio_text" for="x6"><span>«Деловые линии»</span></label>
+              <div class="price price_tooltip">
+                От 000 ₽
+                <div class="custom_tooltip">
+                  <span>До терминала от 660 ₽,</span><br>
+                  <span>До подъезда от 990 ₽</span>
+                </div>
+              </div>
+            </div>
+            <div class="radio_subtext">
+              <p>Стоимость доставки не входит в сумму заказа. Точная стоимость будет известна при получении товара и оплачивается отдельно от оплаты заказа.</p>
+            </div>
+          </div>
+          <div class="radio_wrap delivery_method">
+            <div class="radio_top_line clearfix">
+              <input class="radio" id="x7" type="radio" name="transport_type" value="zheldorxpeditia" required title="Пожалуйста вберите транспортную компанию">
+              <label class="radio_text" for="x7"><span>«Желдорэкспедиция»</span></label>
+              <div class="price price_tooltip">
+                От 0 000 ₽
+                <div class="custom_tooltip">
+                  <span>До терминала от 660 ₽,</span><br>
+                  <span>До подъезда от 990 ₽</span>
+                </div>
+              </div>
+            </div>
+            <div class="radio_subtext">
+              <p>Стоимость доставки не входит в сумму заказа. Точная стоимость будет известна при получении товара и оплачивается отдельно от оплаты заказа.</p>
+            </div>
+          </div>
+          <div class="radio_wrap delivery_method">
+            <div class="radio_top_line clearfix">
+              <input class="radio" id="x8" type="radio" name="transport_type" value="peck" required title="Пожалуйста вберите транспортную компанию">
+              <label class="radio_text" for="x8"><span>«ПЭК»</span></label>
+              <div class="price price_tooltip">
+                От 000 ₽
+                <div class="custom_tooltip">
+                  <span>До терминала от 660 ₽,</span><br>
+                  <span>До подъезда от 990 ₽</span>
+                </div>
+              </div>
+            </div>
+            <div class="radio_subtext">
+              <p>Стоимость доставки не входит в сумму заказа. Точная стоимость будет известна при получении товара и оплачивается отдельно от оплаты заказа.</p>
+            </div>
+          </div>
+          <p class="nearest_date"><b>Ближайшая дата передачи в службу доставки всего заказа: завтра</b></p>
+          <label for="transport_type" class="error radio_error radio_error_transport_type"></label>
+        </div>
+        <div class="delivery_type__iputs_group">
+          <p class="choice_city choice_city_delivery_item"><span class="choice_city_tit">Город</span><span>Санкт-Петербург</span></p>
+          <div class="input_block">
+            <label for="x4_street" class="input_label" >Улица</label>
+            <input id="x4_street" class="checkout_input" name="x4_street" minlength="5" type="text" placeholder="Улица" required >
+          </div>
+          <div class="input_block">
+            <label for="x4_house" class="input_label" >Дом, корпус, квартира</label>
+            <input id="x4_house" class="checkout_input" name="x4_house" minlength="5" type="text" placeholder="Дом, корпус, квартира" required >
+          </div>
+          <p class="transport_ship_info">После доставки товара до филиала транспортной компании в вашем городе с вами свяжутся их представители и предложат выбрать удобный способ получения: самовывоз из филиала или доставку до двери</p>
+        </div>
+      </div>
+      <!-- END TRANSPORT COMPANY TYPE -->
+
+      <!-- END HIDDEN DELIVERY BLOCKS -->
+
+      <!-- PAYMENT METHODS -->
+      <div class="checkout_block checkout_block__payment_methods">
+        <h2>Способ оплаты</h2>
+          <ul class="nav nav-tabs clearfix">
+            <li class="active"><a href="#payment_popular" data-toggle="tab">Популярные</a></li>
+            <li><a href="#payment_other" data-toggle="tab">Другие</a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane tab-pane_yes_baby active clearfix" id="payment_popular">
+              <div class="radio_wrap payment_method">
+                <div class="radio_top_line clearfix">
+                  <input class="radio" id="x9" type="radio" name="payment_method" value="" checked required title="Пожалуйста выберите способ оплаты">
+                  <label class="radio_text" for="x9"><span class="i_radio i_radio_cart_online"></span><span>Картой онлайн</span></label>
+                </div>
+                <div class="radio_subtext radio_subtext_if_tit_icon">
+                  <p>Оплата банковскими картами (VISA, MasterCard) через платежный сервис Cloudpayments</p>
+                </div>
+              </div>
+              <div class="radio_wrap payment_method">
+                <div class="radio_top_line clearfix">
+                  <input class="radio" id="x10" type="radio" name="payment_method" value="" required title="Пожалуйста выберите способ оплаты">
+                  <label class="radio_text" for="x10"><span class="i_radio i_radio_cash"></span><span>Наличными при получении</span></label>
+                </div>
+                <div class="radio_subtext radio_subtext_if_tit_icon">
+                  <p>Оплата при получении заказа (при самовывозе, курьеру IM-Logistics, пункты выдачи, наложенный платеж).</p>
+                </div>
+              </div>
+              <div class="radio_wrap payment_method">
+                <div class="radio_top_line clearfix">
+                  <input class="radio" id="x11" type="radio" name="payment_method" value="" required title="Пожалуйста выберите способ оплаты">
+                  <label class="radio_text" for="x11"><span class="i_radio i_radio_imposed"></span><span>Наложенный платеж</span></label>
+                </div>
+                <div class="radio_subtext radio_subtext_if_tit_icon">
+                  <p>Внимание! При получении посылки в отделении Почты РФ взимается почтовый сбор в размере от 5 до 10% в зависимости от региона</p>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane tab-pane_no_baby clearfix" id="payment_other">
+              <div class="radio_wrap payment_method">
+                <div class="radio_top_line clearfix">
+                  <input class="radio" id="x12" type="radio" name="payment_method" value="" required title="Пожалуйста выберите способ оплаты">
+                  <label class="radio_text" for="x12"><span class="i_radio i_radio_webmoney"></span><span>Webmoney</span></label>
+                </div>
+                <div class="radio_subtext radio_subtext_if_tit_icon">
+                  <p>Максимальный размер — 15 000 рублей за один раз</p>
+                </div>
+              </div>
+              <div class="radio_wrap payment_method">
+                <div class="radio_top_line clearfix">
+                  <input class="radio" id="x13" type="radio" name="payment_method" value="" required title="Пожалуйста выберите способ оплаты">
+                  <label class="radio_text" for="x13"><span class="i_radio i_radio_yandex_money"></span><span>Яндекс.Деньги</span></label>
+                </div>
+              </div>
+              <div class="radio_wrap payment_method">
+                <div class="radio_top_line clearfix">
+                  <input class="radio" id="x14" type="radio" name="payment_method" value="" required title="Пожалуйста выберите способ оплаты">
+                  <label class="radio_text" for="x14"><span class="i_radio i_radio_alpha_click"></span><span>PayU - альфаклик</span></label>
+                </div>
+              </div>
+              <div class="radio_wrap payment_method">
+                <div class="radio_top_line clearfix">
+                  <input class="radio" id="x15" type="radio" name="payment_method" value="" required title="Пожалуйста выберите способ оплаты">
+                  <label class="radio_text" for="x15"><span class="i_radio i_radio_cash"></span><span>Платежные терминалы и салоны связи</span></label>
+                </div>
+                <div class="radio_subtext radio_subtext_if_tit_icon">
+                  <p>Оплатите заказ через более чем 170 тыс. платежных терминалов и салонов связи. Максимальный размер за 1 раз - 15 000 руб.</p>
+                </div>
+              </div>
+              <div class="radio_wrap payment_method">
+                <div class="radio_top_line clearfix">
+                  <input class="radio" id="x16" type="radio" name="payment_method" value="" required title="Пожалуйста выберите способ оплаты">
+                  <label class="radio_text" for="x16"><span class="i_radio i_radio_score"></span><span>Оплата по счету</span></label>
+                </div>
+                <div class="radio_subtext radio_subtext_if_tit_icon">
+                  <p>Выписать счет для оплаты в банке</p>
+                </div>
+              </div>
+            </div>
+            <label for="payment_method" class="error radio_error"></label>
+        </div>
+      </div>
+      <!-- END PAYMENT METHODS -->
+
+      <!-- CHECKOUT BLOCK NOTIFICATION -->
+      <div class="checkout_block checkout_block__notification">
+        <h2>Оповещение о приеме заказа</h2>
+        <div class="radio_wrap notification_method">
+          <div class="radio_top_line clearfix">
+            <input class="radio" id="x17" type="radio" name="notification_type" value="sms" checked required title="Пожалуйста выберите тип оповещения">
+            <label class="radio_text" for="x17"><span class="i_radio i_radio_sms"></span><span>СМС на телефон</span></label>
+          </div>
+          <div class="radio_subtext radio_subtext_if_tit_icon">
+            <p>Я согласен, что все данные по заказу будут приходить мне в виде СМС-уведомлений и дублироваться на мой e-mail, без звонков оператора</p>
+          </div>
+        </div>
+        <div class="radio_wrap notification_method">
+          <div class="radio_top_line clearfix">
+            <input class="radio" id="x18" type="radio" name="notification_type" value="call" required title="Пожалуйста выберите тип оповещения">
+            <label class="radio_text" for="x18"><span class="i_radio i_radio_call"></span><span>Звонок оператора</span></label>
+          </div>
+          <div class="radio_subtext radio_subtext_if_tit_icon">
+            <p>Я хочу, чтобы для подтверждения заказа мне позвонил оператор. Я согласен, что все остальные изменения по заказу будут приходить мне в виде СМС-уведомлений и на e-mail</p>
+          </div>
+        </div>
+        <label for="notification_type" class="error radio_error"></label>
+      </div>
+      <!-- END CHECKOUT BLOCK NOTIFICATION -->
+
+      <!-- CHECKOUT BLOCK ORDER -->
+      <div class="checkout_block checkout_block__order">
+        <div class="checkout_block__order__top_line">
+          <h2>Ваш заказ</h2>
+          <div class="order_info">
+            <p class="summary_position">0 позиций (0 шт.)</p>
+            <p class="summary_price">0 000 ₽</p>
+          </div>
+          <span class="container_arrow_toggler">
+            <span class="i_arrow_toggler"></span>
+            <a href="#" class="arrow_toggler" onclick="return false">Раскрыть</a>
+          </span>
+        </div>
+
+        <div class="order_table clearfix">
+          <div class="order_table_wrap">
+
+            <div class="order_table_row">
+              <div class="order_table_col col_name"> </div>
+              <div class="order_table_col col_name tablet_hidden mobile_hidden ">Скидка</div>
+              <div class="order_table_col col_name mobile_hidden ">Количество</div>
+              <div class="order_table_col col_name">Цена</div>
+            </div>
+
+            <div class="order_table_row">
+              <div class="order_table_col">
+                <img class="order_table_img" src="img/order_table_item.png" alt="">
+                <div class="order_item_text">
+                  <p class="order_item_name">Настольная игра Упрямый шарик Kid Hop (Кид Хоп)</p>
+                  <p class="order_item_info">
+                    <span class="order_item_properrties">Артикул:</span>
+                    <span class="order_item_value">1214124124124</span>
+                  </p>
+                </div>
+              </div>
+              <div class="order_table_col tablet_hidden mobile_hidden ">0%</div>
+              <div class="order_table_col mobile_hidden ">1 000 шт.</div>
+              <div class="order_table_col">10 000 000 ₽</div>
+            </div>
+
+            <div class="order_table_row">
+              <div class="order_table_col">
+                <img class="order_table_img" src="img/order_table_item.png" alt="">
+                <div class="order_item_text">
+                  <p class="order_item_name">Настольная игра Упрямый шарик Kid Hop (Кид Хоп)</p>
+                  <p class="order_item_info">
+                    <span class="order_item_properrties">Артикул:</span>
+                    <span class="order_item_value">1214124124124</span>
+                  </p>
+                </div>
+              </div>
+              <div class="order_table_col tablet_hidden mobile_hidden ">10%</div>
+              <div class="order_table_col mobile_hidden ">1 шт.</div>
+              <div class="order_table_col">1 000 ₽</div>
+            </div>
+
+            <div class="order_table_row">
+              <div class="order_table_col">
+                <img class="order_table_img" src="img/order_table_item.png" alt="">
+                <div class="order_item_text">
+                  <p class="order_item_name">Настольная игра Упрямый шарик Kid Hop (Кид Хоп)</p>
+                  <p class="order_item_info">
+                    <span class="order_item_properrties">Артикул:</span>
+                    <span class="order_item_value">1214124124124</span>
+                  </p>
+                </div>
+              </div>
+              <div class="order_table_col tablet_hidden mobile_hidden ">10%</div>
+              <div class="order_table_col mobile_hidden ">1 шт.</div>
+              <div class="order_table_col">1 000 ₽</div>
+            </div>
+
+          </div>
+
+          <div class="total_block">
+            <div class="total_top_wrap">
+              <p class="total_tit">Итого</p>
+              <p class="old_price">666 666 ₽</p>
+              <p class="new_price">333 333 <span>₽</span></p>
+              <p class="smiles">+1 000 улыбок</p>
+            </div>
+            <div class="total_bottom_wrap">
+              <div class="total_line">
+                <div class="total_propertie">Сумма заказа</div>
+                <div class="total_border"></div>
+                <div class="total_value">1 000 ₽</div>
+              </div>
+              <div class="total_line">
+                <div class="total_propertie">Скидка</div>
+                <div class="total_border"></div>
+                <div class="total_value">100 ₽</div>
+              </div>
+              <div class="total_line">
+                <div class="total_propertie">Доставка</div>
+                <div class="total_border"></div>
+                <div class="total_value">100 000 ₽</div>
+              </div>
+              <div class="total_line">
+                <div class="total_propertie">Сборка</div>
+                <div class="total_border"></div>
+                <div class="total_value">1 000 ₽</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <!-- END CHECKOUT BLOCK ORDER -->
+
+      <!-- CLUB -->
+      <div class="club">
+        <div class="brand-checkbox">
+          <label for="club">
+            <input type="checkbox" name="club" id="club" class="element-checkbox" checked>
+            <span class="check_text">Хочу вступить в Клуб счастливых родителей и получать скидки до 70% на email!</span>
+          </label>
+        </div>
+      </div>
+      <!-- END CLUB -->
+
+      <!-- CHECKOUT BLOCK CHILDREN -->
+      <div class="checkout_block checkout_block__children">
+        <h3>Подарки вашим детям</h3>
+        <div class="children_wrap">
+          <ul class="nav nav-tabs clearfix">
+            <li class="active"><a href="#yes_baby" data-toggle="tab">У меня есть дети...</a></li>
+            <li><a href="#no_baby" data-toggle="tab">Нет детей</a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane tab-pane_yes_baby active clearfix" id="yes_baby">
+              <div class="children_left">
+                <div class="gift_img"></div>
+              </div>
+              <div class="children_right">
+                <div class="children_txt">
+                  <p class="children_tit"><b>…а у нас есть для них отличный подарок!</b></p>
+                  <p>Если вы стали нашим подписчиком, то вы получите письма с сюрпризами и скидками для возраста вашего ребенка ;)</p>
+                </div>
+                <div class="children_line_wrap">
+                  <div class="children_line clearfix">
+                    <div class="children_line_col">
+                      <p class="children_line_col_tit">Пол ребенка</p>
+                      <div class="children_block">
+                        <div class="male">
+                          <a href="" class="baby" onclick="return false">
+                            <svg width="24" height="24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#male"></use></svg>
+                            <span>Мальчик</span>
+                          </a>
+                        </div>
+                        <div class="female">
+                          <a href="" class="baby" onclick="return false">
+                            <svg width="24" height="24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#female"></use></svg>
+                            <span>Девочка</span>
+                          </a>
+                        </div>
+                        <div class="unknown">
+                          <a href="" class="baby" onclick="return false">
+                            <svg width="24" height="24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#unknown"></use></svg>
+                            <span>Пока<br>неизвестно</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="children_line_col">
+                      <p class="children_line_col_tit">День рождения</p>
+                      <div>
+                        <input type="text" class="checkout_input datepicker-here" placeholder="10.10.1000">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href=""></a>
+                <div class="container_plus_toggler">
+                  <span class="i_plus_toggler">&#10133;</span>
+                  <a href="#" class="plus_toggler add_baby" onclick="return false">Добавить еще</a>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane tab-pane_no_baby clearfix" id="no_baby">
+              <div class="children_left">
+                <div class="gift_img"></div>
+              </div>
+              <div class="children_right">
+                <div class="children_txt">
+                  <p class="children_tit">При добавлении детей мы дарим подарки!</p>
+                  <p>Если вы стали нашим подписчиком, то вы получите письма с сюрпризами и скидками для возраста вашего ребенка ;)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END CHECKOUT BLOCK CHILDREN -->
+
+      <!-- CHECKOUT BLOCK COMMENT -->
+      <div class="commet_to_order">
+        <div class="container_plus_toggler add_commetn_wrap">
+          <span class="i_plus_toggler">&#10133;</span>
+          <a href="#" class="plus_toggler add_comment" onclick="return false">Добавить комментарий к заказу</a>
+        </div>
+        <div class="checkout_block checkout_block__comment">
+          <a href="#" class="checkout_block_comment_close" onclick="return false">&#10005;</a>
+          <h3>Комментарий к заказу</h3>
+          <input id="comment" class="checkout_input" name="comment" minlength="2" type="text" placeholder="Введите ваш комментарий" required >
+        </div>
+      </div>
+      <!-- END CHECKOUT BLOCK COMMENT -->
+
+      <button class="btn btn_send_form submit" type="submit" value="Submit"> <span class="i_send_form"></span>Оформить заказ</button>
+
+    </form>
+
+  </div>
+</div>
+<!-- END CHECKOUT -->
+
+  <!-- SVG -->
+  <div class="svgsprite">
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <symbol id="male" viewBox="0 0 24 24">
+        <path d="M12.6 0C10.6 0 9.1 1.5 9.1 3.4 9.1 5.2 10.6 6.7 12.6 6.7 14.5 6.7 16 5.2 16 3.4 16 1.5 14.5 0 12.6 0L12.6 0ZM12.6 1C13.9 1 15 2 15 3.4 15 4.7 13.9 5.8 12.6 5.8 11.2 5.8 10.1 4.7 10.1 3.4 10.1 2 11.2 1 12.6 1L12.6 1ZM10.7 7.2C9.2 7.2 7.9 8.1 7.5 9.5L6 15.1C6 15.1 6 15.1 6 15.1 5.9 15.8 6.3 16.5 7 16.7 7 16.7 7.1 16.7 7.1 16.7 7.8 16.9 8.6 16.5 8.7 15.8L8.8 15.8 8.8 15.7 9.1 14.6 9.3 17.2 9.1 22.6C9.1 23.3 9.7 24 10.6 24 11.4 24 12.1 23.3 12.1 22.6L12.1 17.8 13.1 17.8 13.1 22.6C13.1 23.3 13.7 24 14.5 24 15.4 24 16 23.3 16 22.6L16 17.4C16 17.3 16 17.3 16 17.3 16 17.3 16 17.3 16 17.2L16 15 16.3 15.8C16.4 16.4 17 16.8 17.6 16.8 17.7 16.8 17.9 16.9 18.2 16.6L18.2 16.6C18.8 16.3 19.1 15.7 19 15.1L19 15.1 17.5 9.5C17.1 8.1 15.8 7.2 14.3 7.2L10.7 7.2 10.7 7.2ZM10.7 8.1L14.3 8.1C15.4 8.1 16.3 8.8 16.5 9.7L18 15.3C18 15.3 18 15.3 18 15.4 18.1 15.6 18 15.8 17.7 15.8 17.7 15.8 17.7 15.8 17.6 15.8 17.5 15.8 17.3 15.7 17.2 15.5L16 11.1C16 10.8 15.8 10.7 15.5 10.8 15.2 10.8 15 11 15 11.2L15 13.4 10 13.4 10 11.2C10 11 9.8 10.8 9.5 10.8 9.2 10.7 9.1 10.8 9 11.1L7.8 15.5C7.8 15.5 7.8 15.5 7.8 15.6 7.7 15.8 7.6 15.8 7.3 15.8 7.1 15.7 7 15.6 7 15.3 7 15.3 7 15.3 7 15.3L8.5 9.7C8.7 8.8 9.7 8.1 10.7 8.1L10.7 8.1ZM10.1 14.4L15 14.4 15 16.8 13.5 16.8 11.6 16.8 10.1 16.8 10.1 14.4 10.1 14.4ZM10.1 17.7L10.9 17.7 10.9 22.8C10.9 23.1 10.7 23.3 10.5 23.3 10.3 23.3 10.1 23.1 10.1 22.8L10.1 17.7 10.1 17.7ZM14.2 17.7L15 17.7 15 22.8C15 23.1 14.8 23.3 14.6 23.3 14.3 23.3 14.2 23.1 14.2 22.8L14.2 17.7 14.2 17.7Z"/>
+      </symbol>
+      <symbol id="female" viewBox="0 0 24 24">
+          <path d="M12.5304616,0 C11.3342081,0 10.264442,0.57634031 9.62967116,1.455 C9.60803178,1.4635992 9.58712552,1.47359928 9.56695137,1.48500011 C9.01094958,1.71295337 8.28107307,2.06350548 7.66967761,2.73 C7.0582821,3.39649452 6.58995465,4.36792419 6.50936142,5.73 C6.50031894,5.8683577 6.54545717,5.98801114 6.64477511,6.08896042 C6.74409311,6.18990965 6.866208,6.24025589 7.01111977,6.23999952 L9.01815317,6.24 C9.35265841,6.23993678 9.51991152,6.07992091 9.51991152,5.75995238 C9.51991152,5.52356136 9.52665375,5.32316434 9.53559147,5.115 C10.1547819,6.07685074 11.2677549,6.72 12.5304616,6.72 C13.7931683,6.72 14.9061412,6.07685074 15.5253318,5.115 C15.5342694,5.32316434 15.5410117,5.52356136 15.5410117,5.76 C15.5410778,6.08000011 15.7083471,6.24000043 16.0428198,6.24000043 L18.0498035,6.24 C18.1947147,6.24025632 18.3168296,6.18991008 18.4161481,6.08896085 C18.5154665,5.98801162 18.5606038,5.86835813 18.5515618,5.73 C18.4709685,4.36792419 18.0026411,3.39649452 17.3912456,2.73 C16.7798501,2.06350548 16.0499746,1.71295337 15.4939719,1.485 C15.4734024,1.47870895 15.4524952,1.47370891 15.4312521,1.47 C14.797308,0.585783974 13.7312017,0 12.5304616,0 L12.5304616,0 Z M12.5304616,0.96 C13.9219718,0.96 15.0392534,2.02883125 15.0392534,3.36 C15.0392534,4.69116852 13.9219718,5.76 12.5304616,5.76 C11.1389513,5.76 10.0216699,4.69116852 10.0216699,3.36 C10.0216699,2.02883125 11.1389513,0.96 12.5304616,0.96 L12.5304616,0.96 Z M8.7986339,3.06 C8.66693342,3.59669517 8.57831165,4.3168103 8.54775472,5.28 L7.62263776,5.28 C7.76383382,4.42678482 8.03603562,3.78109062 8.42231513,3.36 C8.53658523,3.23543197 8.67429487,3.16026558 8.7986339,3.06 L8.7986339,3.06 Z M16.2622894,3.06 C16.3866283,3.16026558 16.5243389,3.23543197 16.6386081,3.36 C17.0248876,3.78109062 17.2970894,4.42678482 17.4382855,5.28 L16.5131685,5.28 C16.4826106,4.3168103 16.3939898,3.59669517 16.2622894,3.06 L16.2622894,3.06 Z M11.4799051,7.2 C10.1222487,7.2 8.86994204,7.99218197 8.39095524,9.195 L6.10168277,14.97 L6.08600282,15 L6.10168277,15 C5.80005334,15.6943359 6.19352777,16.503858 6.96407993,16.725 C7.0968757,16.7631116 7.23524183,16.7826434 7.37175859,16.785 L7.246319,17.115 C7.18647744,17.2714545 7.20637979,17.4179974 7.30602508,17.5546289 C7.40567038,17.6912604 7.54256752,17.759718 7.71671745,17.7600018 L10.0216699,17.76 L10.0216699,22.56 C10.0216699,23.3498181 10.7013244,24 11.5269449,24 C11.91183,24 12.263088,23.8558722 12.5304616,23.625 C12.7978352,23.8558722 13.1490932,24 13.5339783,24 C14.3595988,24 15.0392534,23.3498181 15.0392534,22.56 L15.0392534,17.76 L17.3442058,17.76 C17.5183562,17.7597162 17.6552533,17.6912585 17.7548972,17.5546271 C17.8545429,17.4179956 17.8744453,17.2714545 17.8146023,17.115 L17.6891647,16.8 C17.7863948,16.7897259 17.9127589,16.7580652 18.0498035,16.71 L18.0498035,16.725 C18.0691411,16.7194519 18.0780683,16.7012549 18.0968433,16.695 C18.1091468,16.689754 18.1157848,16.7009381 18.1282032,16.695 L18.1282032,16.68 C18.8511499,16.4179266 19.150313,15.6533606 18.9278806,15.015 C18.9279629,15.0099994 18.9279629,15.0049997 18.9278806,15 L16.6072482,9.195 C16.1282614,7.99218197 14.8916346,7.2 13.5339783,7.2 L11.4799051,7.2 L11.4799051,7.2 Z M11.4799051,8.16 L13.5339783,8.16 C14.4844105,8.16 15.3426246,8.7118176 15.6664513,9.525 L17.9714037,15.315 C18.0408323,15.5142553 17.9655792,15.7486725 17.7518845,15.81 C17.7248675,15.8178882 17.6987349,15.8278875 17.6734847,15.84 C17.6928071,15.830755 17.695437,15.84 17.595085,15.84 C17.4877982,15.84 17.2996829,15.7225415 17.2187662,15.57 C17.2150032,15.5628772 17.2063574,15.5623004 17.2030863,15.555 L17.1090066,15.33 C17.1045525,15.3147537 17.0993252,15.2997537 17.0933247,15.285 L15.5096518,11.34 C15.4372296,11.1667941 15.3045128,11.0668899 15.1115023,11.0402875 C14.9184917,11.013685 14.7616922,11.073685 14.6411038,11.2202875 C14.5205154,11.3668899 14.4964327,11.5267941 14.5688549,11.699999 L16.1525297,15.585 C16.1547749,15.6154742 16.1600002,15.6454742 16.1682097,15.675 L16.6229282,16.8 L8.43799508,16.8 L8.89271359,15.675 C8.90735515,15.6411456 8.91780873,15.606145 8.92407348,15.57 L10.4920683,11.7 C10.5644914,11.5267941 10.5404078,11.3668899 10.4198194,11.2202875 C10.299231,11.073685 10.1424324,11.013685 9.94942189,11.0402875 C9.75641036,11.0668899 9.62369357,11.1667941 9.55127042,11.34 L7.84215704,15.57 C7.73141501,15.8348492 7.55799669,15.8949481 7.26199895,15.81 C7.03948653,15.746142 6.93506711,15.5236981 7.01111977,15.36 C7.0164619,15.3551101 7.02168821,15.3501105 7.02679922,15.345 L9.33175214,9.525 C9.65557885,8.7118176 10.5294728,8.16 11.4799051,8.16 L11.4799051,8.16 Z M10.9293804,17.661824 L11.7509438,17.661824 L11.7509438,22.7706161 C11.7509438,23.0539223 11.5679588,23.2814953 11.3401621,23.2814953 C11.1123654,23.2814953 10.9293804,23.0539223 10.9293804,22.7706161 L10.9293804,17.661824 L10.9293804,17.661824 Z M13.3940706,17.661824 L14.215634,17.661824 L14.215634,22.7706161 C14.215634,23.0539223 14.032649,23.2814953 13.8048523,23.2814953 C13.5770556,23.2814953 13.3940706,23.0539223 13.3940706,22.7706161 L13.3940706,17.661824 L13.3940706,17.661824 Z"></path>
+      </symbol>
+      <symbol id="unknown" viewBox="0 0 24 24">
+          <path d="M4 2L4 2.4 4 3.7C4 4.4 4.6 4.9 5.3 4.9L6.1 4.9 6.1 7.7C6.1 9 6.7 10.1 7.8 10.8L9.6 12 7.8 13.2C6.7 13.9 6.1 15 6.1 16.3L6.1 19.1 5.3 19.1C4.6 19.1 4 19.6 4 20.3L4 21.6 4 22 4.4 22 19.6 22 20 22 20 21.6 20 20.3C20 19.6 19.4 19.1 18.7 19.1L17.9 19.1 17.9 16.3C17.9 15 17.3 13.9 16.2 13.2L14.4 12 16.2 10.8C17.3 10.1 17.9 9 17.9 7.7L17.9 4.9 18.7 4.9C19.4 4.9 20 4.4 20 3.7L20 2.4 20 2 19.6 2 4.4 2 4 2 4 2ZM4.8 2.8L19.2 2.8 19.2 3.7C19.2 3.9 19 4.1 18.7 4.1L5.3 4.1C5 4.1 4.8 3.9 4.8 3.7L4.8 2.8 4.8 2.8ZM6.9 4.9L17.1 4.9 17.1 7.7C17.1 8.7 16.6 9.6 15.7 10.1L13.4 11.6 12.9 12 13.4 12.4 15.7 13.9C16.6 14.4 17.1 15.3 17.1 16.3L17.1 19.1 6.9 19.1 6.9 16.3C6.9 15.3 7.4 14.4 8.3 13.9L10.6 12.4 11.1 12 10.6 11.6 8.3 10.1C7.4 9.6 6.9 8.7 6.9 7.7L6.9 4.9 6.9 4.9ZM8.2 7C8.2 10.4 12 11.2 12 11.2 12 11.2 15.8 10.3 15.8 7L8.2 7 8.2 7ZM5.3 19.9L18.7 19.9C19 19.9 19.2 20.1 19.2 20.3L19.2 21.2 4.8 21.2 4.8 20.3C4.8 20.1 5 19.9 5.3 19.9L5.3 19.9Z"/>
+      </symbol>
+    </svg>
+  </div>
+  <!-- END SVG -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.inputmask.bundle.min.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/messages_ru.js"></script>
+  <script src="js/datepicker.min.js"></script>
+  <script src="js/scripts.js"></script>
+
+</body>
+</html>
+

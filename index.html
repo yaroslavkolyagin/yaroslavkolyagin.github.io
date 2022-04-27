@@ -1,64 +1,85 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-	<meta charset="UTF-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Yaroslav Kolyagin - Portfolio</title>
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
-	<link rel="stylesheet" href="styles.css">
-	<style>
-
-	</style>
-</head>
-
-<body>
-	<div class="global-wrap">
-
-		<header>
-			<img class="logo" src="img/palm.png" alt="">
-			<p class="title-description">Hello people, My name is</p>
-			<h1>Yaroslav Kolyagin</h1>
-			<p class="title-description">Html Coder from Saint Petersburg</p>
-		</header>
-
-		<main>
-			<section>
-				<div class="container">
-					<h2>Portfolio</h2>
-					<ul>
-						<li><a href="http://4u-spb.ru/" target="_blank"><img class="preview" src="img/preview/4you.jpg" alt=""></a></li>
-						<li><a href="http://ukcds.m18.ru/" target="_blank"><img class="preview" src="img/preview/ukcds.jpg" alt=""></a></li>
-						<li><a href="http://triocomedy.ru/" target="_blank"><img class="preview" src="img/preview/trio.jpg" alt=""></a></li>
-
-						<li><a href="works/prechu/index.html" target="_blank"><img class="preview" src="img/preview/prechu.jpg" alt=""></a></li>
-
-						<li><a href="works/design_lab/index.html" target="_blank"><img class="preview" src="img/preview/designlab.jpg" alt=""></a></li>
-						<li><a href="works/elena/index.html" target="_blank"><img class="preview" src="img/preview/elena.jpg" alt=""></a></li>
-						<li><a href="works/deliver/index.html" target="_blank"><img class="preview" src="img/preview/deliver.jpg" alt=""></a></li>
-
-						<li><a href="works/2in1/index.html" target="_blank"><img class="preview" src="img/preview/2in1.jpg" alt=""></a></li>
-						<li><a href="works/testdrive/index.html" target="_blank"><img class="preview" src="img/preview/testdrive.jpg" alt=""></a></li>
-						<li><a href="works/wholesale/index.html" target="_blank"><img class="preview" src="img/preview/wholesale.jpg" alt=""></a></li>
-
-						<li><a href="http://flurnn.ru/" target="_blank"><img class="preview" src="img/preview/flurnn.jpg" alt=""></a></li>
-						<li><a href="http://rentgen-centr.ru" target="_blank"><img class="preview" src="img/preview/rentgen.jpg" alt=""></a></li>
-						<li><a href="works/veeam_test/index.html" target="_blank"><img class="preview" src="img/preview/veam.jpg" alt=""></a></li>
-
-						<li><a href="works/checkout/index.html" target="_blank"><img class="preview" src="img/preview/checkout.jpg" alt=""></a></li>
-
-
-					</ul>
-				</div>
-			</section>
-		</main>
-
-		<footer>
-			<p>2019</p>
-		</footer>
-
-	</div>
-</body>
-
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>Yaroslav Kolyagin / Portfolio</title>
+    <link rel="stylesheet" href="css/bundle.min.css">
+  </head>
+  <body>
+    <header class="header"><img class="header__decoration" src="img/i-spider-web.png" alt="">
+      <div class="header__inner">
+        <h1 class="header__title wow fadeInDown" data-wow-delay=".75s">Yaroslav Kolyagin</h1><img class="header__avatar header__avatar--wizard wow fadeIn" data-wow-delay=".5s" src="img/i-wizard.png" alt="" onclick="clickJoke();"><img class="header__avatar header__avatar--satan header__avatar--hide" src="img/i-satan.png" alt="">
+        <h2 class="header__subtitle wow fadeInUp" data-wow-delay="1s">Html Wizard</h2>
+        <div class="header__description"><img class="header__descriptionImg header__descriptionImg--left wow fadeInLeft" src="img/i-candelabra.png" alt="" data-wow-delay="1.5s">
+          <p class="header__descriptionText wow fadeInUp" data-wow-delay="1s">From Saint Petersburg</p><img class="header__descriptionImg header__descriptionImg--right wow fadeInRight" src="img/i-candelabra.png" alt="" data-wow-delay="1.5s">
+        </div>
+      </div>
+    </header>
+    <div class="portfolio">
+      <div class="container">
+        <h2 class="portfolio__title wow fadeInUp" data-wow-delay="2s">Works</h2>
+        <div class="portfolioGrid">
+          <div class="portfolioGrid__item wow fadeInUp" data-wow-delay="2.5s"><a class="portfolioGrid__itemLink" href="https://www.4u-spb.ru/"></a><img class="portfolioGrid__itemImg" src="img/previews/4you.png" alt="">
+            <div class="portfolioGrid__itemText">Жилой комплекс 4YOU</div>
+          </div>
+          <div class="portfolioGrid__item wow fadeInUp" data-wow-delay="2.5s"><a class="portfolioGrid__itemLink" href="https://www.ukcds.spb.ru/"></a><img class="portfolioGrid__itemImg" src="img/previews/ukcds.png" alt="">
+            <div class="portfolioGrid__itemText">Мультисервисная управляющая компания</div>
+          </div>
+          <div class="portfolioGrid__item wow fadeInUp" data-wow-delay="2.5s"><a class="portfolioGrid__itemLink" href="https://ispot.ru/"></a><img class="portfolioGrid__itemImg" src="img/previews/ispot.png" alt="">
+            <div class="portfolioGrid__itemText">Интернет магазин iSpot</div>
+          </div>
+          <div class="portfolioGrid__item wow fadeInUp"><a class="portfolioGrid__itemLink" href="https://pmi.spmi.ru/index.php/pmi"></a><img class="portfolioGrid__itemImg" src="img/previews/gorny.png" alt="">
+            <div class="portfolioGrid__itemText">Записки горного института</div>
+          </div>
+          <div class="portfolioGrid__item wow fadeInUp"><a class="portfolioGrid__itemLink" href="https://nordbau.ru/"></a><img class="portfolioGrid__itemImg" src="img/previews/nordbau.png" alt="">
+            <div class="portfolioGrid__itemText">Nordbau</div>
+          </div>
+          <div class="portfolioGrid__item wow fadeInUp"><a class="portfolioGrid__itemLink" href="https://1manufactura.ru/"></a><img class="portfolioGrid__itemImg" src="img/previews/pkm.png" alt="">
+            <div class="portfolioGrid__itemText">Первая конная мануфактура</div>
+          </div>
+          <div class="portfolioGrid__item wow fadeInUp"><a class="portfolioGrid__itemLink" href="http://rosstro-group.ru/"></a><img class="portfolioGrid__itemImg" src="img/previews/rosstro.png" alt="">
+            <div class="portfolioGrid__itemText">Сеть бизнес‐центров РОССТРО</div>
+          </div>
+          <div class="portfolioGrid__item wow fadeInUp"><a class="portfolioGrid__itemLink" href="works/landing-gamersbay/index.html"></a><img class="portfolioGrid__itemImg" src="img/previews/works/landing-gamersbay.png" alt="">
+            <div class="portfolioGrid__itemText">Лэндинг для Gamersbay</div>
+          </div>
+          <div class="portfolioGrid__item wow fadeInUp"><a class="portfolioGrid__itemLink" href="works/landing-gamersbay-2/index.html"></a><img class="portfolioGrid__itemImg" src="img/previews/works/landing-gamersbay-2.png" alt="">
+            <div class="portfolioGrid__itemText">Лэндинг для Gamersbay 2</div>
+          </div>
+          <div class="portfolioGrid__item wow fadeInUp"><a class="portfolioGrid__itemLink" href="works/landing-studybay/index.html"></a><img class="portfolioGrid__itemImg" src="img/previews/works/landing-studybay.png" alt="">
+            <div class="portfolioGrid__itemText">Лэндинг для Studybay</div>
+          </div>
+          <div class="portfolioGrid__item wow fadeInUp"><a class="portfolioGrid__itemLink" href="works/landing-studybay-2/index.html"></a><img class="portfolioGrid__itemImg" src="img/previews/works/landing-studybay-2.png" alt="">
+            <div class="portfolioGrid__itemText">Лэндинг для Studybay 2</div>
+          </div>
+          <div class="portfolioGrid__item wow fadeInUp"><a class="portfolioGrid__itemLink" href="works/landing-avtor24/index.html"></a><img class="portfolioGrid__itemImg" src="img/previews/works/landing-avtor24.png" alt="">
+            <div class="portfolioGrid__itemText">Лэндинг для Автор24</div>
+          </div>
+          <div class="portfolioGrid__item wow fadeInUp"><a class="portfolioGrid__itemLink" href="works/landing-tossox/index.html"></a><img class="portfolioGrid__itemImg" src="img/previews/works/landing-tossox.png" alt="">
+            <div class="portfolioGrid__itemText">Лэндинг для Tossox</div>
+          </div>
+          <div class="portfolioGrid__item wow fadeInUp"><a class="portfolioGrid__itemLink" href="works/landing-vestan/index.html"></a><img class="portfolioGrid__itemImg" src="img/previews/works/landing-vestan.png" alt="">
+            <div class="portfolioGrid__itemText">Лэндинг для Vestan</div>
+          </div>
+          <div class="portfolioGrid__item wow fadeInUp"><a class="portfolioGrid__itemLink" href="works/landing-sosolid/index.html"></a><img class="portfolioGrid__itemImg" src="img/previews/works/landing-sosolid.png" alt="">
+            <div class="portfolioGrid__itemText">Лэндинг для Sosolid</div>
+          </div>
+          <div class="portfolioGrid__item wow fadeInUp"><a class="portfolioGrid__itemLink" href="works/landing-babadu/index.html"></a><img class="portfolioGrid__itemImg" src="img/previews/works/landing-babadu.png" alt="">
+            <div class="portfolioGrid__itemText">Лэндинг для Babadu</div>
+          </div>
+          <div class="portfolioGrid__item wow fadeInUp"><a class="portfolioGrid__itemLink" href="works/landing-babadu-2/index.html"></a><img class="portfolioGrid__itemImg" src="img/previews/works/landing-babadu-2.png" alt="">
+            <div class="portfolioGrid__itemText">Лэндинг для Babadu 2</div>
+          </div>
+          <div class="portfolioGrid__item wow fadeInUp"><a class="portfolioGrid__itemLink" href="works/page-babadu-checkout/index.html"></a><img class="portfolioGrid__itemImg" src="img/previews/works/page-babadu-checkout.png" alt="">
+            <div class="portfolioGrid__itemText">Страница Checkout для Babadu</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer__title">Lord of html, css, scss, less, jq, gulp, black magic</div>
+    </footer>
+    <script src="js/bundle.min.js"></script>
+  </body>
 </html>

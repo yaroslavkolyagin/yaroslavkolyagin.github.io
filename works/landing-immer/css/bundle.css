@@ -1291,6 +1291,17 @@ body.cut
     border-radius: 50%;
     background-color: #ff008a;
 }
+@media (max-width: 768px)
+{
+    .explanation__head-circle
+    {
+        top: -.3125rem;
+        left: -.3125rem;
+
+        width: 5rem;
+        height: 5rem;
+    }
+}
 .explanation__head-circle--active
 {
     -webkit-transition: .5s;

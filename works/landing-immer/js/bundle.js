@@ -13982,3 +13982,64 @@ $('.joined__logo').click(function (e) {
 
 	$('.joined').removeClass('joined--open')
 });
+
+
+
+
+setTimeout(function() {
+	$('.explanation__item:nth-child(1) .explanation__head-circle').addClass('explanation__head-circle--active')
+}, 0);
+setTimeout(function() {
+	$('.explanation__item:nth-child(1) .explanation__head-circle').removeClass('explanation__head-circle--active')
+}, 500);
+
+setTimeout(function() {
+	$('.explanation__item:nth-child(2) .explanation__head-circle').addClass('explanation__head-circle--active')
+}, 500);
+setTimeout(function() {
+	$('.explanation__item:nth-child(2) .explanation__head-circle').removeClass('explanation__head-circle--active')
+}, 1000);
+
+setTimeout(function() {
+	$('.explanation__item:nth-child(3) .explanation__head-circle').addClass('explanation__head-circle--active')
+}, 1000);
+setTimeout(function() {
+	$('.explanation__item:nth-child(3) .explanation__head-circle').removeClass('explanation__head-circle--active')
+}, 1500);
+
+setTimeout(function() {
+	$('.explanation__item:nth-child(4) .explanation__head-circle').addClass('explanation__head-circle--active')
+}, 1500);
+setTimeout(function() {
+	$('.explanation__item:nth-child(4) .explanation__head-circle').removeClass('explanation__head-circle--active')
+}, 2000);
+
+setInterval(function(){
+	setTimeout(function() {
+		$('.explanation__item:nth-child(1) .explanation__head-circle').addClass('explanation__head-circle--active')
+	}, 0);
+	setTimeout(function() {
+		$('.explanation__item:nth-child(1) .explanation__head-circle').removeClass('explanation__head-circle--active')
+	}, 500);
+
+	setTimeout(function() {
+		$('.explanation__item:nth-child(2) .explanation__head-circle').addClass('explanation__head-circle--active')
+	}, 500);
+	setTimeout(function() {
+		$('.explanation__item:nth-child(2) .explanation__head-circle').removeClass('explanation__head-circle--active')
+	}, 1000);
+
+	setTimeout(function() {
+		$('.explanation__item:nth-child(3) .explanation__head-circle').addClass('explanation__head-circle--active')
+	}, 1000);
+	setTimeout(function() {
+		$('.explanation__item:nth-child(3) .explanation__head-circle').removeClass('explanation__head-circle--active')
+	}, 1500);
+
+	setTimeout(function() {
+		$('.explanation__item:nth-child(4) .explanation__head-circle').addClass('explanation__head-circle--active')
+	}, 1500);
+	setTimeout(function() {
+		$('.explanation__item:nth-child(4) .explanation__head-circle').removeClass('explanation__head-circle--active')
+	}, 2000);
+  }, 4000);

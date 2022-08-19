@@ -13982,38 +13982,30 @@ $('.joined__logo').click(function (e) {
 
 	$('.joined').removeClass('joined--open')
 });
-
-
-
-
 setTimeout(function() {
 	$('.explanation__item:nth-child(1) .explanation__head-circle').addClass('explanation__head-circle--active')
 }, 0);
 setTimeout(function() {
 	$('.explanation__item:nth-child(1) .explanation__head-circle').removeClass('explanation__head-circle--active')
 }, 500);
-
 setTimeout(function() {
 	$('.explanation__item:nth-child(2) .explanation__head-circle').addClass('explanation__head-circle--active')
 }, 500);
 setTimeout(function() {
 	$('.explanation__item:nth-child(2) .explanation__head-circle').removeClass('explanation__head-circle--active')
 }, 1000);
-
 setTimeout(function() {
 	$('.explanation__item:nth-child(3) .explanation__head-circle').addClass('explanation__head-circle--active')
 }, 1000);
 setTimeout(function() {
 	$('.explanation__item:nth-child(3) .explanation__head-circle').removeClass('explanation__head-circle--active')
 }, 1500);
-
 setTimeout(function() {
 	$('.explanation__item:nth-child(4) .explanation__head-circle').addClass('explanation__head-circle--active')
 }, 1500);
 setTimeout(function() {
 	$('.explanation__item:nth-child(4) .explanation__head-circle').removeClass('explanation__head-circle--active')
 }, 2000);
-
 setInterval(function(){
 	setTimeout(function() {
 		$('.explanation__item:nth-child(1) .explanation__head-circle').addClass('explanation__head-circle--active')
@@ -14042,4 +14034,22 @@ setInterval(function(){
 	setTimeout(function() {
 		$('.explanation__item:nth-child(4) .explanation__head-circle').removeClass('explanation__head-circle--active')
 	}, 2000);
-  }, 4000);
+}, 4000);
+$('.header__burger').click(function (e) {
+	$('body').addClass('cut')
+	$('.header__nav').addClass('header__nav--active')
+	$('.header__burger').addClass('header__burger--hidden')
+	$('.header__cross').addClass('header__cross--active')
+});
+$('.header__cross').click(function (e) {
+	$('body').removeClass('cut')
+	$('.header__nav').removeClass('header__nav--active')
+	$('.header__burger').removeClass('header__burger--hidden')
+	$('.header__cross').removeClass('header__cross--active')
+});
+$('.header__list-item-link').click(function (e) {
+	$('body').removeClass('cut')
+	$('.header__nav').removeClass('header__nav--active')
+	$('.header__burger').removeClass('header__burger--hidden')
+	$('.header__cross').removeClass('header__cross--active')
+});

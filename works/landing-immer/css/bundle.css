@@ -722,6 +722,13 @@ html
         font-size: 1rem;
     }
 }
+@media (max-width: 360px)
+{
+    html
+    {
+        font-size: 13px;
+    }
+}
 
 body
 {
@@ -777,6 +784,7 @@ body.cut
     min-width: 2.5rem;
     height: 2.5rem;
     margin-right: 1rem;
+    margin-left: -.625rem;
 
     cursor: pointer;
 }
@@ -797,7 +805,16 @@ body.cut
 {
     .header__burger
     {
-        display: block;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
     }
 }
 .header__burger--hidden
@@ -812,6 +829,7 @@ body.cut
     min-width: 2.5rem;
     height: 2.5rem;
     margin-right: 1rem;
+    margin-left: -.625rem;
 
     cursor: pointer;
 }
@@ -832,7 +850,16 @@ body.cut
 {
     .header__cross--active
     {
-        display: block;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
     }
 }
 .header__main
@@ -876,10 +903,13 @@ body.cut
         left: 0;
 
         display: none;
+        overflow: auto;
 
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
         width: 100%;
-        height: 100vh;
-        padding: 2.5rem 0;
+        height: calc(100vh - 5.25rem);
+        padding: 2.5rem 1.25rem;
 
         background: #1c0022;
     }
@@ -905,6 +935,8 @@ body.cut
 {
     .header__list
     {
+        width: 100%;
+
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         -ms-flex-flow: column;
@@ -922,7 +954,13 @@ body.cut
 {
     .header__list-item
     {
+        width: 100%;
         margin-bottom: 2.75rem;
+        margin-left: 0;
+    }
+    .header__list-item:last-child
+    {
+        margin-bottom: 0;
     }
 }
 .header__list-item-link
@@ -936,6 +974,15 @@ body.cut
 .header__list-item-link:hover
 {
     color: #ff008a;
+}
+@media (max-width: 768px)
+{
+    .header__list-item-link
+    {
+        display: block;
+
+        width: 100%;
+    }
 }
 .header .btn-icon
 {
